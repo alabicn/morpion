@@ -83,7 +83,7 @@
 				$matchL == "OOO" || 
 				$matchC == "XXX" || 
 				$matchC == "OOO"){
-				$_SESSION["etatjeu"] = $_SESSION["coupjoue"];
+				$_SESSION["etatjeu"] = "Le jouer - " . $_SESSION["coupjoue"] . " - a gagné";
 			}
 		}
 		$c = 1;
