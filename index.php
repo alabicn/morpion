@@ -22,49 +22,44 @@
 		jouerCase(explode("-", $_GET['case']));
 		verifierSiGagne();
 	}
-	
-	
 ?>
-
-<style>
-
-	#grille{
-		box-sizing: border-box;
-		width: 330px;
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	.case{
-		box-sizing: border-box;
-		width: 100px;
-		height: 100px;
-		border: 1px solid black;
-		text-decoration: none;
-		text-align: center;
-		align-self: center;
-		font-size: 5em;
-		line-height: 1em;
-		border-radius: 20px;
-		margin: 5px;
-	}
-	a.case:hover{
-		background-color: #99bff0;
-	}
-
-
-</style>
-<a href="?reset">RESET</a>
-<p>C'est à <?= $_SESSION['coupjoue']?> de jouer !</p>
-<?php
-	
-	affichageGrille();
-	
-	echo "<h1>";
-	if($_SESSION["etatjeu"] != false){
-		echo $_SESSION["etatjeu"];
-	}
-	echo "</h1>";
-	
-	var_dump($_SESSION);
-?>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+		<title>Morpion</title>
+		<!--link for CSS-->
+        <link rel="stylesheet" href="css/style.css">
+		<!--logo's icon-->
+		<link rel="icon" type="image/x-icon" href="css/img/favicon/favicon.png"/>
+	</head>
+	<body>
+		<main id="page">
+			<header>
+				<div class="header__content">
+                    <div id="logo">
+                        <img src="css/img/logo.png" alt="Tic tac toe's logo" />
+                        <h1 class="header__logo-txt">Morpion</h1>
+					</div>
+					<div class="nav">
+						<a href="?reset">RESET</a>
+					</div>
+				</div>
+			</header>
+				<p class="info">C'est à - <?= $_SESSION['coupjoue']?> - de jouer !</p>
+				<?php
+					
+					affichageGrille();
+					
+					echo "<h2 class='info'>";
+					if($_SESSION["etatjeu"] != false){
+						echo $_SESSION["etatjeu"];
+					}
+					echo "</h2>";
+				?>
+		<footer>
+			<h2 class="signature">&copy; Nemanja ALABIC</h2>
+		</footer>
+	</main>
+	</body>
+</html>

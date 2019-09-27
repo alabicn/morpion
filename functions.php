@@ -99,7 +99,7 @@
 			$matchdiag1 == "OOO" || 
 			$matchdiag2 == "XXX" || 
 			$matchdiag2 == "OOO"){
-			$_SESSION["etatjeu"] = $_SESSION["coupjoue"];
+			$_SESSION["etatjeu"] = "Le jouer - " . $_SESSION["coupjoue"] . " - a gagné";
 		}
 
 		$dispo = false;
